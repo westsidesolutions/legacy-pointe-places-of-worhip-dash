@@ -1,5 +1,6 @@
-import sqlite3
 import html
+from pathlib import Path
+
 import streamlit as st
 import pandas as pd
 import folium
@@ -9,9 +10,13 @@ from folium.plugins import MarkerCluster
 st.set_page_config(page_title="Prospect Atlas", layout="wide")
 st.title("Prospect Atlas")
 
-conn = sqlite3.connect("prospects.db")
-df = pd.read_sql("SELECT * FROM prospects", conn)
-conn.close()
+CSV_PATH = Path(__file__).parent / "prospects.csv"
+
+if not CSV_PATH.exists():
+    st.error(f"Data file missing: {CSV_PATH.name}")
+    st.stop()
+
+df = pd.read_csv(CSV_PATH)
 
 with st.sidebar:
     st.header("Filters")
