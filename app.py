@@ -10,7 +10,8 @@ from folium.plugins import MarkerCluster
 st.set_page_config(page_title="Prospect Atlas", layout="wide")
 st.title("Prospect Atlas")
 
-CSV_PATH = Path(__file__).parent / "prospects.csv"
+#CSV_PATH = Path(__file__).parent / "prospects.csv"
+CSV_PATH = Path(__file__).parent / "synagogues_property_size_full.csv"
 
 if not CSV_PATH.exists():
     st.error(f"Data file missing: {CSV_PATH.name}")
