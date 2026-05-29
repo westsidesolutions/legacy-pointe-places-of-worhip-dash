@@ -95,4 +95,6 @@ else:
     st_folium(m, height=500, use_container_width=True, returned_objects=[])
 
 st.write(f"**{len(filtered):,} of {len(df):,} prospects** match your filters")
-st.dataframe(filtered)
+#st.dataframe(filtered)
+display_df = filtered.drop(columns=["latitude", "longitude"], errors="ignore")
+st.dataframe(display_df)
