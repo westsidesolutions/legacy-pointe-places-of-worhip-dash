@@ -13,7 +13,8 @@ st.title("Prospect Atlas")
 #CSV_PATH = Path(__file__).parent / "prospects.csv"
 #CSV_PATH = Path(__file__).parent / "synagogues_property_size_full.csv"
 #CSV_PATH = Path(__file__).parent / "Synagogue Place of Worship Prospects - Sheet3.csv"
-CSV_PATH = Path(__file__).parent / "Place of Worship Prospects - Sheet1.csv"
+#CSV_PATH = Path(__file__).parent / "Place of Worship Prospects - Sheet1.csv"
+CSV_PATH = Path(__file__).parent / "Place of Worship Prospects - Delivery.csv"
 
 DISPLAY_COLS = [
     "name", "address", "city", "zip_code", "primary_type",
