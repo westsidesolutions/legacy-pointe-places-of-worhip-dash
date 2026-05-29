@@ -20,8 +20,8 @@ DISPLAY_COLS = [
     "name", "address", "city", "zip_code", "primary_type",
     "phone", "website", "rating", "review_count",
     "AreaBuilding", "AreaLotSF", "AreaLotAcres",
-    "Contact1_NameFirst", "Contact1_NameLast", "Contact1_Title", "Contact1_Email",
-    "Contact2_NameFirst", "Contact2_NameLast", "Contact2_Title", "Contact2_Email",
+    "Contact1_NameFirst", "Contact1_NameLast", "Contact1_Title", "Contact1_Email", "Contact1_ContactPhone",
+    "Contact2_NameFirst", "Contact2_NameLast", "Contact2_Title", "Contact2_Email", "Contact2_ContactPhone",
 ]
 
 if not CSV_PATH.exists():
