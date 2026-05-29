@@ -15,6 +15,13 @@ st.title("Prospect Atlas")
 #CSV_PATH = Path(__file__).parent / "Synagogue Place of Worship Prospects - Sheet3.csv"
 CSV_PATH = Path(__file__).parent / "Place of Worship Prospects - Sheet1.csv"
 
+DISPLAY_COLS = [
+    "name", "address", "city", "zip_code", "primary_type",
+    "phone", "website", "rating", "review_count",
+    "AreaBuilding", "AreaLotSF", "AreaLotAcres",
+    "Contact1_NameFirst", "Contact1_NameLast", "Contact1_Title", "Contact1_Email",
+    "Contact2_NameFirst", "Contact2_NameLast", "Contact2_Title", "Contact2_Email",
+]
 
 if not CSV_PATH.exists():
     st.error(f"Data file missing: {CSV_PATH.name}")
@@ -96,5 +103,7 @@ else:
 
 st.write(f"**{len(filtered):,} of {len(df):,} prospects** match your filters")
 #st.dataframe(filtered)
-display_df = filtered.drop(columns=["latitude", "longitude"], errors="ignore")
+#display_df = filtered.drop(columns=["latitude", "longitude"], errors="ignore")
+#st.dataframe(display_df)
+display_df = filtered[[c for c in DISPLAY_COLS if c in filtered.columns]]
 st.dataframe(display_df)
